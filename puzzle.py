@@ -1,4 +1,4 @@
-from .terminal_service import TerminalService
+from terminal_service import TerminalService
 
 
 class Puzzle:

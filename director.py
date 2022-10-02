@@ -1,6 +1,6 @@
-from .terminal_service import TerminalService
-from .puzzle import Puzzle
-from .jumper import Jumper
+from terminal_service import TerminalService
+from puzzle import Puzzle
+from jumper import Jumper
 
 
 class Director:
