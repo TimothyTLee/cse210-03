@@ -73,6 +73,8 @@ class Director:
             self._reset()
 
     def _check_win_loss(self):
+        self._terminal_service.change_head(self._jumper.lives)
+
         if self._puzzle.check_complete() and self._jumper.lives > 0:
             self._terminal_service.write_text(
                 "Way to go! You survived this jump")

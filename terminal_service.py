@@ -1,10 +1,18 @@
 class TerminalService:
+
     """A service that handles terminal operations.
-    
+
     The responsibility of a TerminalService is to provide input and output operations for the 
     terminal.
     """
-     
+
+    def __init__(self):
+        self._jumper = [
+            '  0',
+            ' /|\\',
+            ' / \\'
+        ]
+
     def read_text(self, prompt):
         """Gets text input from the terminal. Directs the user with the given prompt.
 
@@ -28,7 +36,7 @@ class TerminalService:
             float: The user's input as a number.
         """
         return float(input(prompt))
-        
+
     def write_text(self, text):
         """Displays the given text on the terminal. 
 
@@ -44,22 +52,19 @@ class TerminalService:
             "/   \\",
             "-----",
             "\\   /",
-            " \\ /", 
+            " \\ /",
         ]
 
         starting_index = len(jumper_lives) - lives
         for i in range(starting_index, len(jumper_lives)):
             print(jumper_lives[i])
-        
-        jumper = [
-            '  0',
-            ' /|\\',
-            ' / \\'
-        ]
 
-        for i in range(len(jumper)):
-            print (jumper[i])
+        for i in range(len(self._jumper)):
+            print(self._jumper[i])
 
     def draw_answer(self, answer):
         print(answer)
- 
+
+    def change_head(self, lives):
+        if lives == 0:
+            self._jumper[0] = "  x"
